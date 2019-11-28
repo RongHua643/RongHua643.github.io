@@ -15,10 +15,50 @@ var ctx = c.getContext("2d");
 ctx.fillStyle = "#CEDFEE";
 ctx.fillRect(0, 0, 1500, 1000);
 
-var rec = c.getContext("2d");
-rec.moveTo(20,10);
-rec.lineTo(200,100);
-rec.stroke();
+var hand = c.getContext("2d");
+hand.moveTo(40,230);
+hand.lineTo(80,200);
+hand.stroke();
+
+var hand2 = c.getContext("2d");
+hand2.moveTo(165,230);
+hand2.lineTo(130,200);
+hand2.stroke();
+
+var ft = c.getContext("2d");
+ft.moveTo(115,270);
+ft.lineTo(115,240);
+ft.stroke();
+
+var ft2 = c.getContext("2d");
+ft2.moveTo(95,270);
+ft2.lineTo(95,240);
+ft2.stroke();
+
+var ran = c.getContext("2d");
+ran.beginPath();
+ran.lineCap = "round";
+ran.moveTo(105, 150);
+ran.lineTo(60, 240);
+ran.lineTo(155, 240);
+ran.lineTo(105, 150);
+ran.fillStyle = "#8AB667";
+ran.fill();
+ran.stroke();
+
+var cir = c.getContext("2d");
+cir.beginPath();
+cir.arc(125, 190, 5, 0, 2 * Math.PI);
+cir.fillStyle = "#000000";
+cir.fill();
+
+var cir = c.getContext("2d");
+cir.beginPath();
+cir.arc(105, 190, 5, 0, 2 * Math.PI);
+cir.fillStyle = "#000000";
+cir.fill();
+
+
 
 </script>
 </body>
