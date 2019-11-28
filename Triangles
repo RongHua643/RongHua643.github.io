@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html>
+<style>
+body {
+  background-image: url('https://images2.minutemediacdn.com/image/upload/c_crop,h_1412,w_2520,x_0,y_399/f_auto,q_auto,w_1100/v1554922648/shape/mentalfloss/548648-istock-462548187.jpg');
+
+}
+#myAnimation {
+  position: fixed;
+  top: 170px;
+  left: 64px;
+  width: 103px;
+  height: 100px;
+  background-color: #DCE1F5;
+  clip-path: polygon(49% 0%, 0 100%, 100% 100%);
+}
+#leg1 {
+  position: fixed;
+  top: 268px;
+  left: 122px;
+  width: 3px;
+  height: 30px;
+  background-color: #DCE1F5;
+}
+
+#leg2 {
+  position: fixed;
+  top: 268px;
+  left: 102px;
+  width: 3px;
+  height: 30px;
+  background-color: #DCE1F5;
+}
+
+#hand1 {
+  position: fixed;
+  top: 218px;
+  left: 65px;
+  width:3px;
+  height: 50px;
+  background-color: #DCE1F5;
+  transform: rotate(53deg);
+}
+
+#hand2 {
+  position: fixed;
+  top: 218px;
+  left: 155px;
+  width:3px;
+  height: 50px;
+  background-color: #DCE1F5;
+  transform: rotate(-49deg);
+}
+
+#circle1 {
+  position: fixed;
+  top: 212px;
+  left: 128px;
+  display: block;
+  background: #4D61B2;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+  margin: 0;
+}
+#circle2 {
+  position: fixed;
+  top: 212px;
+  left: 108px;
+  display: block;
+  background: #4D61B2;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+  margin: 0;
+}
+
+</style>
+<body>
+<div>
+<button onclick="myMove()">Click Me</button> 
+</div>
+<div id ="leg1"></div>
+<div id ="leg2"></div>
+<div id ="hand1"></div>
+<div id ="hand2"></div>
+<div id ="myAnimation"></div>
+<div id ="circle2"></div>
+<div id ="circle1"></div>
+
+<canvas id="myCanvas" width="600" height="300"></canvas>
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.fillStyle = "#A2A7BD";
+ctx.fillRect(0, 0, 1500, 1000);
+
+var text = c.getContext("2d");
+text.font = "20px Courier New";
+text.strokeText("Triangles...", 20, 40);
+
+var hand = c.getContext("2d");
+hand.moveTo(40,230);
+hand.lineTo(80,200);
+hand.lineWidth = 2;
+hand.stroke();
+
+var hand2 = c.getContext("2d");
+hand2.moveTo(165,230);
+hand2.lineTo(130,200);
+hand2.stroke();
+
+var ft = c.getContext("2d");
+ft.moveTo(115,270);
+ft.lineTo(115,240);
+ft.stroke();
+
+var ft2 = c.getContext("2d");
+ft2.moveTo(95,270);
+ft2.lineTo(95,240);
+ft2.stroke();
+
+var ran = c.getContext("2d");
+ran.beginPath();
+ran.lineCap = "round";
+ran.moveTo(105, 150);
+ran.lineTo(60, 240);
+ran.lineTo(155, 240);
+ran.lineTo(105, 150);
+ran.fillStyle = "#8AB667";
+ran.fill();
+ran.stroke();
+
+var cir = c.getContext("2d");
+cir.beginPath();
+cir.arc(125, 190, 5, 0, 2 * Math.PI);
+cir.fillStyle = "#000000";
+cir.fill();
+
+var cir2 = c.getContext("2d");
+cir2.beginPath();
+cir2.arc(105, 190, 5, 0, 2 * Math.PI);
+cir2.fillStyle = "#000000";
+cir2.fill();
+
+
+function myMove() {
+  var elem = document.getElementById("myAnimation");   
+  var body = 65;
+  var leg1An = document.getElementById("leg1");   
+  var leg1Move = 122;
+  var leg2An = document.getElementById("leg2");   
+  var leg2Move = 102;
+  var hand1An = document.getElementById("hand1");   
+  var hand1Move = 65;
+  var hand2An = document.getElementById("hand2");   
+  var hand2Move = 155;
+  
+  var circle1An = document.getElementById("circle1");   
+  var circle1Move = 108;
+  var circle2An = document.getElementById("circle2");   
+  var circle2Move = 88;
+  
+  var id = setInterval(frame, 1);
+  
+  var text = c.getContext("2d");
+  text.font = "20px Courier New";
+  text.strokeText("Says Hello...", 170, 40);
+  
+
+  function frame() {
+    if (body == 480) {
+      clearInterval(id);
+    } 
+    else {
+     	 body++; 
+     	 elem.style.left = body + 'px'; 
+         leg1Move++;
+         leg1An.style.left = leg1Move + 'px'; 
+         leg2Move++;
+         leg2An.style.left = leg2Move + 'px'; 
+         hand1Move++;
+         hand1An.style.left = hand1Move + 'px';
+         hand2Move++;
+         hand2An.style.left = hand2Move + 'px';
+         
+         circle1Move++;
+         circle1An.style.left = circle1Move + 'px';
+         circle2Move++;
+         circle2An.style.left = circle2Move + 'px';
+    }
+  }
+}
+
+</script>
+</body>
+</html>
