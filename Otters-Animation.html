@@ -2,19 +2,23 @@
 <html>
 <style>
 body {
-  background-image: url('https://bloximages.chicago2.vip.townnews.com/independentri.com/content/tncms/assets/v3/editorial/3/9d/39de6e58-b6b7-11e8-a561-cf1d4a759335/5b9956da22d78.image.jpg?resize=400%2C320');
+  background-image: url('https://images2.minutemediacdn.com/image/upload/c_crop,h_1412,w_2520,x_0,y_399/f_auto,q_auto,w_1100/v1554922648/shape/mentalfloss/548648-istock-462548187.jpg');
 }
 </style>
 
 <body>
   
-<canvas id="myCanvas" width="200" height="100"></canvas>
+<canvas id="myCanvas" width="600" height="300"></canvas>
 <script>
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 ctx.fillStyle = "#CEDFEE";
-ctx.fillRect(0, 0, 400, 300);
+ctx.fillRect(0, 0, 1500, 1000);
 
+var rec = c.getContext("2d");
+rec.moveTo(20,10);
+rec.lineTo(200,100);
+rec.stroke();
 
 </script>
 </body>
